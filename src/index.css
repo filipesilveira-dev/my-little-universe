@@ -1,0 +1,66 @@
+/* A partir da v4, basta importar o tailwind aqui */
+@import "tailwindcss";
+
+/* tema claro (padrão) */
+:root {
+  --bg: #f8f9fc;
+  --bg-surface: #ffffff;
+  --text: #1a1d29;
+  --text-muted: #5b6075;
+  --border: #e2e5ef;
+  --accent: #6c5ce7;
+
+  /* navbar */
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --navbar-text: var(--text);
+
+  /* busca (lupa) */
+  --search-match-bg: #ffe58f;      /* todas as ocorrências */
+  --search-match-text: #1a1d29;
+  --search-active-bg: #ff9f43;     /* ocorrência atual */
+  --search-active-text: #000000;
+
+  color-scheme: light;
+}
+
+/* tema escuro */
+:root[data-theme="dark"] {
+  --bg: #0f111a;
+  --bg-surface: #181b27;
+  --text: #e8eaf2;
+  --text-muted: #9aa0b8;
+  --border: #2a2e40;
+  --accent: #a29bfe;
+
+  --navbar-bg: rgba(24, 27, 39, 0.85);
+  --navbar-text: var(--text);
+
+  --search-match-bg: #6b5b00;
+  --search-match-text: #fff8dc;
+  --search-active-bg: #d9822b;
+  --search-active-text: #ffffff;
+
+  color-scheme: dark;
+}
+
+/* uso */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar {
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+  border-bottom: 1px solid var(--border);
+}
+
+mark.search-match {
+  background: var(--search-match-bg);
+  color: var(--search-match-text);
+}
+mark.search-match.active {
+  background: var(--search-active-bg);
+  color: var(--search-active-text);
+}
