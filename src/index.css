@@ -1,6 +1,11 @@
 /* A partir da v4, basta importar o tailwind aqui */
 @import "tailwindcss";
 
+:root {
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-ui: "Inter", system-ui, -apple-system, sans-serif;
+}
+
 /* tema claro (padrão) */
 :root {
   --bg: #f8f9fc;
@@ -15,9 +20,9 @@
   --navbar-text: var(--text);
 
   /* busca (lupa) */
-  --search-match-bg: #ffe58f;      /* todas as ocorrências */
+  --search-match-bg: #ffe58f; /* todas as ocorrências */
   --search-match-text: #1a1d29;
-  --search-active-bg: #ff9f43;     /* ocorrência atual */
+  --search-active-bg: #ff9f43; /* ocorrência atual */
   --search-active-text: #000000;
 
   color-scheme: light;
@@ -47,7 +52,9 @@
 body {
   background: var(--bg);
   color: var(--text);
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .navbar {

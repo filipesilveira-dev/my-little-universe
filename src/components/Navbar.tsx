@@ -1,6 +1,8 @@
 import { useTheme } from "../hooks/useTheme";
 
 export default function Navbar() {
+
+  // Utiliza o custom hook para estabelecer o valor de theme
   const { theme, toggleTheme } = useTheme();
   return (
     <section className="flex flex-row justify-between items-center m-2 ">
