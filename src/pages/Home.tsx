@@ -1,9 +1,10 @@
-import Navbar from "../components/Navbar";
+import Header from "../components/Header"
+
 
 export default function Home() {
   return (
     <section>
-      <Navbar />
+      <Header/>
       <h1>Home</h1>
     </section>
   );
