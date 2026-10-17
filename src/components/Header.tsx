@@ -2,13 +2,23 @@ import { useState } from "react";
 import { useTheme } from "../hooks/useTheme";
 import { MenuIcon, MoonIcon, SunIcon } from "./Icons";
 import { AnimatePresence, motion } from "motion/react";
-import { Clapperboard, Headphones, Home, MonitorPlay, User } from "lucide-react";
+import {
+  Clapperboard,
+  Headphones,
+  Home,
+  MonitorPlay,
+  User,
+} from "lucide-react";
+// Importação dos arquivos para internacionalização
+import { useLanguage } from "../contexts/useLanguage";
+import { languages } from "../i18n/translations";
 
 export default function Header() {
   // Utiliza o custom hook para estabelecer o valor de theme
   const { theme, toggleTheme } = useTheme();
-  const [isOpen, setIsOpen]  = useState<boolean>(false);
-
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // Custom hook criado para disponibilizar os valores a serem utilizados do Context API
+  const { language, setLanguage, t } = useLanguage();
 
   return (
     <section className="relative flex flex-row justify-between items-center m-1 p-2">
@@ -36,8 +46,23 @@ export default function Header() {
 
       {/* Botões interativos */}
       <div className="flex flex-row justify-between items-center gap-3">
-        <button onClick={()=> setIsOpen(!isOpen)}>
-          <MenuIcon className="sm:hidden hover:cursor-pointer"/>
+        <label htmlFor="language-select">{t.language}</label>
+
+        <select
+          id="language-select"
+          value={language}
+          onChange={(event) =>
+            setLanguage(event.target.value as typeof language)
+          }
+        >
+          {languages.map((item) => (
+            <option key={item.code} value={item.code}>
+              {item.label}
+            </option>
+          ))}
+        </select>
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <MenuIcon className="sm:hidden hover:cursor-pointer" />
         </button>
         <button onClick={toggleTheme} aria-label="Alternar tema">
           {theme === "light" ? (
@@ -62,19 +87,49 @@ export default function Header() {
               {/* lista não ordenada com as âncoras */}
               <ul className="flex flex-col gap-2 p-2 text-left">
                 <li className="p-1 ml-1 hover:cursor-pointer">
-                  <a href="#home" className="flex flex-row items-center gap-2 hover:font-bold"><Home className="inline-block"/>Início</a>
+                  <a
+                    href="#home"
+                    className="flex flex-row items-center gap-2 hover:font-bold"
+                  >
+                    <Home className="inline-block" />
+                    Início
+                  </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
-                  <a href="#about" className="flex flex-row items-center gap-2 hover:font-bold"><User className="inline-block"/>Sobre</a>
+                  <a
+                    href="#about"
+                    className="flex flex-row items-center gap-2 hover:font-bold"
+                  >
+                    <User className="inline-block" />
+                    Sobre
+                  </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
-                  <a href="#movies" className="flex flex-row items-center gap-2 hover:font-bold"><Clapperboard className="inline-block"/>Filmes</a>
+                  <a
+                    href="#movies"
+                    className="flex flex-row items-center gap-2 hover:font-bold"
+                  >
+                    <Clapperboard className="inline-block" />
+                    Filmes
+                  </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
-                  <a href="#series" className="flex flex-row items-center gap-2 hover:font-bold"><MonitorPlay className="inline-block"/>Séries</a>
+                  <a
+                    href="#series"
+                    className="flex flex-row items-center gap-2 hover:font-bold"
+                  >
+                    <MonitorPlay className="inline-block" />
+                    Séries
+                  </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
-                  <a href="#music" className="flex flex-row items-center gap-2 hover:font-bold"><Headphones className="inline-block"/>Música</a>
+                  <a
+                    href="#music"
+                    className="flex flex-row items-center gap-2 hover:font-bold"
+                  >
+                    <Headphones className="inline-block" />
+                    Música
+                  </a>
                 </li>
               </ul>
             </nav>
