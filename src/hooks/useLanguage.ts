@@ -4,7 +4,7 @@
 //  - Verificar se o componente está dentro de um LanguageProvider
 //  - Retornar os valores compartilhados de maneira simples para quem precisar deles
 import { useContext } from "react";
-import { LanguageContext } from "./language-context";
+import { LanguageContext } from "../contexts/language-context";
 
 export function useLanguage() {
   const context = useContext(LanguageContext);

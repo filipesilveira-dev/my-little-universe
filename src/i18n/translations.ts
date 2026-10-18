@@ -7,11 +7,12 @@ export const languages: {
   code: Language;
   label: string;
   shortLabel: string;
+  flag: string;
 }[] = [
-  { code: "pt", label: "Português", shortLabel: "PT" },
-  { code: "en", label: "English", shortLabel: "EN" },
-  { code: "es", label: "Español", shortLabel: "ES" },
-  { code: "fr", label: "Français", shortLabel: "FR" },
+  { code: "pt", label: "Português", shortLabel: "PT", flag: "flags/br.svg", },
+  { code: "en", label: "English", shortLabel: "EN", flag: "flags/gb.svg", },
+  { code: "es", label: "Español", shortLabel: "ES", flag: "flags/es.svg", },
+  { code: "fr", label: "Français", shortLabel: "FR", flag: "flags/fr.svg", },
 ];
 
 // Objetos aninhados

@@ -10,7 +10,7 @@ import {
   User,
 } from "lucide-react";
 // Importação dos arquivos para internacionalização
-import { useLanguage } from "../contexts/useLanguage";
+import { useLanguage } from "../hooks/useLanguage";
 import { languages } from "../i18n/translations";
 
 export default function Header() {
@@ -21,49 +21,59 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <section className="relative flex flex-row justify-between items-center m-1 p-2">
+    <section className="relative flex flex-row justify-between items-center m-1 mb-2 p-2">
       {/* logo do site */}
       <div>my little universe</div>
 
       {/* lista não ordenada com as âncoras */}
       <ul className="hidden sm:flex flex-row justify-between w-100">
         <li>
-          <a href="#home">Início</a>
+          <a href="#home">{t.nav.home}</a>
         </li>
         <li>
-          <a href="#about">Sobre</a>
+          <a href="#about">{t.nav.about}</a>
         </li>
         <li>
-          <a href="#movies">Filmes</a>
+          <a href="#movies">{t.nav.movies}</a>
         </li>
         <li>
-          <a href="#series">Séries</a>
+          <a href="#series">{t.nav.series}</a>
         </li>
         <li>
-          <a href="#music">Música</a>
+          <a href="#music">{t.nav.music}</a>
         </li>
       </ul>
 
       {/* Botões interativos */}
-      <div className="flex flex-row justify-between items-center gap-3">
-        <label htmlFor="language-select">{t.language}</label>
 
-        <select
-          id="language-select"
-          value={language}
-          onChange={(event) =>
-            setLanguage(event.target.value as typeof language)
-          }
-        >
-          {languages.map((item) => (
-            <option key={item.code} value={item.code}>
-              {item.label}
-            </option>
-          ))}
-        </select>
+      <div className="flex flex-row justify-between items-center gap-3">
         <button onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon className="sm:hidden hover:cursor-pointer" />
         </button>
+        
+        {/* Container do "bandeira + select" */}
+        <div className="flex flex-row items-center gap-1">
+          <img
+            src={languages.find((item) => item.code === language)?.flag}
+            alt=""
+            className="size-6 rounded-full object-cover"
+          />
+
+          <select
+            id="language-select"
+            value={language}
+            onChange={(event) =>
+              setLanguage(event.target.value as typeof language)
+            }
+          >
+            {languages.map((item) => (
+              <option key={item.code} value={item.code}>
+                {item.shortLabel}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <button onClick={toggleTheme} aria-label="Alternar tema">
           {theme === "light" ? (
             <MoonIcon className="hover:cursor-pointer" />

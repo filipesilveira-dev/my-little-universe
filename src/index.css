@@ -71,3 +71,8 @@ mark.search-match.active {
   background: var(--search-active-bg);
   color: var(--search-active-text);
 }
+
+select{
+  background-color: var(--bg);
+  color: var(--search-match-text);
+}
