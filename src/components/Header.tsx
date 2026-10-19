@@ -21,7 +21,7 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <section className="relative flex flex-row justify-between items-center m-1 mb-2 p-2">
+    <section className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3">
       {/* logo do site */}
       <div>my little universe</div>
 
@@ -47,10 +47,6 @@ export default function Header() {
       {/* Botões interativos */}
 
       <div className="flex flex-row justify-between items-center gap-3">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          <MenuIcon className="sm:hidden hover:cursor-pointer" />
-        </button>
-        
         {/* Container do "bandeira + select" */}
         <div className="flex flex-row items-center gap-1">
           <img
@@ -73,6 +69,11 @@ export default function Header() {
             ))}
           </select>
         </div>
+
+            {/* Botão do menu hambúrguer */}
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <MenuIcon className="sm:hidden hover:cursor-pointer" />
+        </button>
 
         <button onClick={toggleTheme} aria-label="Alternar tema">
           {theme === "light" ? (

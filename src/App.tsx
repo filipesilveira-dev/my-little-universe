@@ -5,19 +5,26 @@ import Music from "./pages/Music";
 import { Route, Routes } from "react-router-dom";
 import Movies from "./pages/Movies";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    // Estabelece as rotas com base na URL: renderiza a página de acordo com a URL
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/movies" element={<Movies />} />
-      <Route path="/series" element={<Series />} />
-      <Route path="/music" element={<Music />} />
+    <>
+      <Header />
 
-      {/* Página curinga para rotas inexistentes */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+      {/* Estabelece as rotas com base na URL: renderiza a página de acordo com a URL */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/series" element={<Series />} />
+        <Route path="/music" element={<Music />} />
+
+        {/* Página curinga para rotas inexistentes */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
