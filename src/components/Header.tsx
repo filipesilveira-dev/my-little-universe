@@ -21,9 +21,9 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <section className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3">
+    <section className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3 ">
       {/* logo do site */}
-      <div>my little universe</div>
+      <div className="font-bold">my little universe.</div>
 
       {/* lista não ordenada com as âncoras */}
       <ul className="hidden sm:flex flex-row justify-between w-100">
@@ -103,7 +103,7 @@ export default function Header() {
                     className="flex flex-row items-center gap-2 hover:font-bold"
                   >
                     <Home className="inline-block" />
-                    Início
+                    {t.nav.home}
                   </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
@@ -112,7 +112,7 @@ export default function Header() {
                     className="flex flex-row items-center gap-2 hover:font-bold"
                   >
                     <User className="inline-block" />
-                    Sobre
+                    {t.nav.about}
                   </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
@@ -121,7 +121,7 @@ export default function Header() {
                     className="flex flex-row items-center gap-2 hover:font-bold"
                   >
                     <Clapperboard className="inline-block" />
-                    Filmes
+                    {t.nav.movies}
                   </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
@@ -130,7 +130,7 @@ export default function Header() {
                     className="flex flex-row items-center gap-2 hover:font-bold"
                   >
                     <MonitorPlay className="inline-block" />
-                    Séries
+                    {t.nav.series}
                   </a>
                 </li>
                 <li className="p-1 ml-1 hover:cursor-pointer">
@@ -139,7 +139,7 @@ export default function Header() {
                     className="flex flex-row items-center gap-2 hover:font-bold"
                   >
                     <Headphones className="inline-block" />
-                    Música
+                    {t.nav.music}
                   </a>
                 </li>
               </ul>
@@ -147,6 +147,7 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+      
     </section>
   );
 }
