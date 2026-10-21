@@ -1,4 +1,5 @@
-// Internationalization: aqruivo responsável pelas versões internacionais
+
+ // Internationalization: arquivo responsável pelas versões internacionais
 
 // Tipagem que determina quais as possibilidades aceitas (Union Type)
 export type Language = "pt" | "en" | "es" | "fr";
@@ -9,10 +10,30 @@ export const languages: {
   shortLabel: string;
   flag: string;
 }[] = [
-  { code: "pt", label: "Português", shortLabel: "PT", flag: "flags/br.svg", },
-  { code: "en", label: "English", shortLabel: "EN", flag: "flags/gb.svg", },
-  { code: "es", label: "Español", shortLabel: "ES", flag: "flags/es.svg", },
-  { code: "fr", label: "Français", shortLabel: "FR", flag: "flags/fr.svg", },
+  {
+    code: "pt",
+    label: "Português",
+    shortLabel: "PT",
+    flag: "flags/br.svg",
+  },
+  {
+    code: "en",
+    label: "English",
+    shortLabel: "EN",
+    flag: "flags/gb.svg",
+  },
+  {
+    code: "es",
+    label: "Español",
+    shortLabel: "ES",
+    flag: "flags/es.svg",
+  },
+  {
+    code: "fr",
+    label: "Français",
+    shortLabel: "FR",
+    flag: "flags/fr.svg",
+  },
 ];
 
 // Objetos aninhados
@@ -36,6 +57,12 @@ export const translations = {
     theme: {
       toggle: "Alternar tema",
     },
+    footer: {
+      rights: "Todos os direitos reservados",
+      cinema: "Cinema",
+      series: "Séries",
+      music: "Música",
+    },
   },
 
   en: {
@@ -56,6 +83,12 @@ export const translations = {
     language: "Language",
     theme: {
       toggle: "Toggle theme",
+    },
+    footer: {
+      rights: "All rights reserved",
+      cinema: "Cinema",
+      series: "TV Shows",
+      music: "Music",
     },
   },
 
@@ -78,6 +111,12 @@ export const translations = {
     theme: {
       toggle: "Cambiar tema",
     },
+    footer: {
+      rights: "Todos los derechos reservados",
+      cinema: "Cine",
+      series: "Series",
+      music: "Música",
+    },
   },
 
   fr: {
@@ -98,6 +137,12 @@ export const translations = {
     language: "Langue",
     theme: {
       toggle: "Changer de thème",
+    },
+    footer: {
+      rights: "Tous droits réservés",
+      cinema: "Cinéma",
+      series: "Séries",
+      music: "Musique",
     },
   },
 };
