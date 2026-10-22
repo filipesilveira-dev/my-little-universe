@@ -77,10 +77,10 @@ export const translations = {
       },
 
       movies: {
-        title: "Filmes",
+        title: "Minha lista de filmes",
         paragraph:
-          "Histórias que me emocionam, provocam reflexões e despertam minha imaginação.",
-        link: "Explorar filmes",
+          'O cinema para mim sempre foi a principal forma de imersão de arte. Todo mundo tem seu gênero preferido de filme, mas quando me perguntam o que gosto mais, eu geralmente respondo: "Gosto de filme bom". Montei essa lista de alguns desses filmes e vamos ver se você descobre meu gênero favorito.',
+        link: "Veja minha lista",
       },
 
       series: {
@@ -167,10 +167,10 @@ export const translations = {
       },
 
       movies: {
-        title: "Movies",
+        title: "My movie list",
         paragraph:
-          "Stories that move me, spark reflection, and awaken my imagination.",
-        link: "Explore movies",
+          'Cinema has always been my main way of immersing myself in art. Everyone has a favorite movie genre, but when people ask me what I like most, I usually answer: "I like good movies". I put together this list of some of those movies, and let’s see if you can guess my favorite genre.',
+        link: "See my list",
       },
 
       series: {
@@ -257,10 +257,10 @@ export const translations = {
       },
 
       movies: {
-        title: "Películas",
+        title: "Mi lista de películas",
         paragraph:
-          "Historias que me emocionan, despiertan reflexiones y estimulan mi imaginación.",
-        link: "Explorar películas",
+          'El cine siempre ha sido mi principal forma de sumergirme en el arte. Todo el mundo tiene su género de películas favorito, pero cuando me preguntan qué me gusta más, normalmente respondo: "Me gustan las buenas películas". He preparado esta lista con algunas de ellas y vamos a ver si descubres mi género favorito.',
+        link: "Ver mi lista",
       },
 
       series: {
@@ -347,10 +347,10 @@ export const translations = {
       },
 
       movies: {
-        title: "Films",
+        title: "Ma liste de films",
         paragraph:
-          "Des histoires qui m'émeuvent, suscitent la réflexion et éveillent mon imagination.",
-        link: "Explorer les films",
+          "Le cinéma a toujours été pour moi le principal moyen de m’immerger dans l’art. Tout le monde a son genre de film préféré, mais quand on me demande ce que j’aime le plus, je réponds généralement : « J’aime les bons films ». J’ai rassemblé une sélection de films et nous allons voir si vous pouvez deviner mon genre préféré.",
+        link: "Voir ma liste",
       },
 
       series: {

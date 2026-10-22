@@ -1,11 +1,14 @@
 import bg_greetings_img from "../assets/img/movieTheater.jpg";
 import bg_movies_img from "../assets/img/cinema.jpg";
 import { useLanguage } from "../hooks/useLanguage";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const { t } = useLanguage();
   return (
-    <div className="flex flex-col justify-center items-center gap-2">
+    <div className="flex flex-col justify-center items-center gap-2 bg(--bg)">
+      
       {/* Seção "Greetings" */}
       <section
         style={{ backgroundImage: `url(${bg_greetings_img})` }}
@@ -22,10 +25,27 @@ export default function Home() {
       </section>
 
       {/* Seção "Movies" */}
-      <section
-        style={{ backgroundImage: `url(${bg_movies_img})` }}
-        className="flex items-center w-full h-96 bg-cover bg-center bg-no-repeat"
-      ></section>
+      <section className="flex flex-row w-full bg-(--bg-surface)">
+        <div className="flex flex-col justify-center items-left gap-3 p-6 w-1/2">
+          <h1 className="text-3xl leading-none">{t.home.movies.title}</h1>
+          <p className="min-[250px]:text-xs leading-normal">
+            {t.home.movies.paragraph}
+          </p>
+          <Link
+            to="/movies"
+            className="min-[250px]:text-xs flex flex-row justify-between items-center px-5 py-2 rounded-lg bg-(--accent) text-white hover:opacity-80 transition-opacity"
+          >
+            <span>{t.home.movies.link}</span>
+            <span>
+              <ArrowRight />
+            </span>
+          </Link>
+        </div>
+        <div
+          style={{ backgroundImage: `url(${bg_movies_img})` }}
+          className="flex items-center w-1/2 h-96 bg-cover bg-center bg-no-repeat"
+        />
+      </section>
     </div>
   );
 }
