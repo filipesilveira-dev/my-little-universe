@@ -84,10 +84,10 @@ export const translations = {
       },
 
       series: {
-        title: "Séries",
+        title: "Séries da minha vida",
         paragraph:
-          "Narrativas e personagens que conquistam minha atenção e permanecem comigo.",
-        link: "Explorar séries",
+          "As séries têm a possibilidade de contar histórias que um filme só não consegue. Isso gera toda uma nova dinâmica na qual personagens e tramas podem ser melhor exploradas e aprofundadas. Uma boa série é aquela que te mantém preso, que te faz se importar com personagens. Listei algumas das séries da minha vida. Consumo obrigatório para os amantes de boas histórias. Alguma ficou de fora?",
+        link: "Veja minha lista",
       },
 
       music: {
@@ -174,10 +174,10 @@ export const translations = {
       },
 
       series: {
-        title: "TV Shows",
+        title: "The TV Shows That Shaped My Life",
         paragraph:
-          "Stories and characters that capture my attention and stay with me.",
-        link: "Explore TV shows",
+          "TV shows can tell stories that a single movie simply cannot. This creates a whole new dynamic in which characters and plotlines can be explored in greater depth. A good show keeps you hooked and makes you care about its characters. I've listed some of the TV shows that have shaped my life. Essential viewing for anyone who loves a good story. Did I leave any out?",
+        link: "See my list",
       },
 
       music: {
@@ -264,10 +264,10 @@ export const translations = {
       },
 
       series: {
-        title: "Series",
+        title: "Las series de mi vida",
         paragraph:
-          "Historias y personajes que captan mi atención y permanecen conmigo.",
-        link: "Explorar series",
+          "Las series tienen la capacidad de contar historias que una sola película no puede. Esto crea una dinámica completamente nueva en la que los personajes y las tramas pueden explorarse y desarrollarse con mayor profundidad. Una buena serie es aquella que te mantiene enganchado y hace que te importen sus personajes. He reunido algunas de las series de mi vida. Son imprescindibles para quienes aman las buenas historias. ¿Me he dejado alguna fuera?",
+        link: "Ver mi lista",
       },
 
       music: {
@@ -354,10 +354,10 @@ export const translations = {
       },
 
       series: {
-        title: "Séries",
+        title: "Les séries de ma vie",
         paragraph:
-          "Des récits et des personnages qui captent mon attention et restent avec moi.",
-        link: "Explorer les séries",
+          "Les séries ont la capacité de raconter des histoires qu’un seul film ne peut pas développer. Cela crée une dynamique nouvelle, dans laquelle les personnages et les intrigues peuvent être explorés et approfondis. Une bonne série est celle qui vous tient en haleine et vous fait vous attacher à ses personnages. J’ai sélectionné quelques-unes des séries de ma vie. Un incontournable pour les amateurs de belles histoires. En ai-je oublié une ?",
+        link: "Voir ma liste",
       },
 
       music: {

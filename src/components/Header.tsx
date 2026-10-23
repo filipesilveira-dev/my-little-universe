@@ -12,6 +12,7 @@ import {
 // Importação dos arquivos para internacionalização
 import { useLanguage } from "../hooks/useLanguage";
 import { languages } from "../i18n/translations";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   // Utiliza o custom hook para estabelecer o valor de theme
@@ -27,23 +28,25 @@ export default function Header() {
       <div className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3 h-15">
 
         {/* logo do site */}
-        <div className="font-bold">my little universe.</div>
+        <Link  to="/"><div className="font-bold hover:cursor-pointer">my little universe.</div></Link>
+        
+
         {/* lista não ordenada com as âncoras */}
         <ul className="hidden sm:flex flex-row justify-between w-100">
           <li>
-            <a href="#home">{t.nav.home}</a>
+            <a className="hover:font-bold" href="#home">{t.nav.home}</a>
+          </li>
+          {/* <li>
+            <a className="hover:font-bold" href="#about">{t.nav.about}</a>
+          </li> */}
+          <li>
+            <a className="hover:font-bold" href="#movies">{t.nav.movies}</a>
           </li>
           <li>
-            <a href="#about">{t.nav.about}</a>
+            <a className="hover:font-bold" href="#series">{t.nav.series}</a>
           </li>
           <li>
-            <a href="#movies">{t.nav.movies}</a>
-          </li>
-          <li>
-            <a href="#series">{t.nav.series}</a>
-          </li>
-          <li>
-            <a href="#music">{t.nav.music}</a>
+            <a className="hover:font-bold" href="#music">{t.nav.music}</a>
           </li>
         </ul>
         {/* Botões interativos */}
