@@ -24,7 +24,7 @@ export default function Header() {
     // Prega o Header no topo da tela durante rolagem
     <section className="top-0 sticky bg-(--bg)">
 
-      <div className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3 ">
+      <div className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3 h-15">
 
         {/* logo do site */}
         <div className="font-bold">my little universe.</div>
@@ -91,7 +91,7 @@ export default function Header() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <nav>
+              <nav className=" w-screen">
                 {/* lista não ordenada com as âncoras */}
                 <ul className="flex flex-col gap-2 p-2 text-left">
                   <li className="p-1 ml-1 hover:cursor-pointer">

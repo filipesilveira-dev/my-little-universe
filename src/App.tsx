@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <div className="bg-(--bg) sm:w-[80%]  mx-auto">
       <Header />
 
       {/* Estabelece as rotas com base na URL: renderiza a página de acordo com a URL */}
@@ -24,7 +24,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
