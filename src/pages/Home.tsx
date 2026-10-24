@@ -74,6 +74,9 @@ export default function Home() {
           className="flex items-center w-1/2 h-96 bg-cover bg-center bg-no-repeat"
         />
       </section>
+
+      {/* Seção "Music" */}
+      <section></section>
     </div>
   );
 }

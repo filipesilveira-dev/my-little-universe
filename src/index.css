@@ -6,8 +6,8 @@
   --font-ui: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-/* tema claro (padrão) */
-:root {
+/* tema claro */
+:root[data-theme="light"] {
   --bg: #d6d7d8;
   --bg-surface: #ffffff;
   --text: #1a1d29;
@@ -54,7 +54,7 @@ body {
   color: var(--text);
   transition:
     background 0.2s,
-    color 0.2s;
+    color 0.5s;
 }
 
 .navbar {
