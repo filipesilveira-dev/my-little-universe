@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const { t } = useLanguage();
+
   return (
     <div className="flex flex-col justify-center items-center gap-2 bg(--bg)">
       {/* Seção "Greetings" */}
@@ -51,7 +52,10 @@ export default function Home() {
       </section>
 
       {/* Seção "Series" */}
-      <section className="flex flex-row-reverse w-full bg-(--bg-surface)" id="series">
+      <section
+        className="flex flex-row-reverse w-full bg-(--bg-surface)"
+        id="series"
+      >
         <div className="flex flex-col justify-center items-left gap-3 p-6 w-1/2 font-medium">
           <h1 className="text-3xl leading-none">{t.home.series.title}</h1>
           <p className="min-[250px]:text-xs leading-normal">
@@ -76,7 +80,9 @@ export default function Home() {
       </section>
 
       {/* Seção "Music" */}
-      <section></section>
+      <section>
+        <h1>Minha lista de músicas</h1>
+      </section>
     </div>
   );
 }
