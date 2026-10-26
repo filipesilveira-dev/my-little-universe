@@ -1,7 +1,7 @@
 // Arquivo dedicado às funções de requisição ao servidor de API
 
 // Tipagem com apenas os dados que serão consumidos da API
-type Artist = {
+export type Artist = {
   idArtist: string;
   strArtist: string;
   strArtistThumb: string | null;
