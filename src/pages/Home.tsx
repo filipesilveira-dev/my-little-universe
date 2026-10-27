@@ -9,11 +9,23 @@ import { useEffect, useState } from "react";
 import type { Artist } from "../services/artistService";
 // Importa a função que receberá o nome do artista como argumento e fará uma requisição ao servidor de API
 import { getArtistByName } from "../services/artistService";
+import ArtistCarousel from "../components/ArtistCarousel";
 
 export default function Home() {
   // Acessa o arquivo "translations.ts" fornecido pelo provider especificado no custom hook
   const { t } = useLanguage();
-  // Estado que receberá os artistas obtidos na requisição feita ao servidor de API
+  // Variável que indica quais arquistas serão requisitados
+  const artistNames = [
+    "Led Zeppelin",
+    "Pink Floyd",
+    "System of a Down",
+    "Queen",
+    "Metallica",
+    "Fleetwood Mac",
+    "The Beatles",
+    "Guns N' Roses",
+  ];
+    // Estado que receberá os artistas obtidos na requisição feita ao servidor de API
   const [artists, setArtists] = useState<Artist[]>([]);
 
   // Como efeito colateral faz requisições dos artistas na primeira montagem
@@ -22,11 +34,10 @@ export default function Home() {
     async function loadArtists() {
       try {
         // Variável recebe os doados de todas as requisições feitas
-        const results = await Promise.all([
-          getArtistByName("Led Zeppelin"),
-          getArtistByName("Pink Floyd"),
-          getArtistByName("System of a Down"),
-        ]);
+        const results = await Promise.all(
+          // Map() feito no array com os nomes dos artistas para fazer uma requisição para cada
+          artistNames.map((name) => getArtistByName(name)),
+        );
 
         // Adiciona a "Artists" todos os dados dos artistas diferentes de "null"
         setArtists(
@@ -113,13 +124,8 @@ export default function Home() {
       </section>
 
       {/* Seção "Music" */}
-      <section>
-        <h1>Minha lista de músicas</h1>
-        <ul>
-          {artists.map((artist) => (
-            <li key={artist.idArtist}>{artist.strArtist}</li>
-          ))}
-        </ul>
+      <section className="w-full bg-(--bg-surface)" id="music">
+        <ArtistCarousel artists={artists} />
       </section>
     </div>
   );
