@@ -14,7 +14,7 @@ export default function ArtistCarousel({ artists }: ArtistCarouselProps) {
     <Swiper
     // "[&_.swiper-wrapper]:ease-linear!" aplica essa regra ao elemento interno sem precisar criar uma classe personalizada no index.css. 
     // Corresponde a .meu-carrossel .swiper-wrapper {transition-timing-function: linear !important;}
-      className="w-[80%] [&_.swiper-wrapper]:ease-linear!"
+      className="m-3 w-[90%] [&_.swiper-wrapper]:ease-linear!"
       // Módulo de reprodução automática
       modules={[Autoplay]}
       // Faz o carrousel repetir os slides
@@ -38,9 +38,10 @@ export default function ArtistCarousel({ artists }: ArtistCarouselProps) {
       {artists.map((artist) => (
         // Representa o slide individual. O "!" faz a largura definida pelo Tailwind prevalecer sobre a largura padrão do Swipe
         <SwiperSlide key={artist.idArtist} className="w-48! sm:w-56!">
-          <div>
+          <div className="relative w-fit">
             <img src={artist.strArtistThumb ?? ""} alt={artist.strArtist} />
-            <p>{artist.strArtist}</p>
+            <div className="absolute inset-0 bg-black/60"/>
+            <p className="text-center font-bold text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-fit">{artist.strArtist}</p>
           </div>
         </SwiperSlide>
       ))}

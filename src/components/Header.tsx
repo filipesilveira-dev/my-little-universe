@@ -7,7 +7,6 @@ import {
   Headphones,
   Home,
   MonitorPlay,
-  User,
 } from "lucide-react";
 // Importação dos arquivos para internacionalização
 import { useLanguage } from "../hooks/useLanguage";
@@ -59,6 +58,7 @@ export default function Header() {
               className="size-6 rounded-full object-cover"
             />
             <select
+            className="hover:cursor-pointer"
               id="language-select"
               value={language}
               onChange={(event) =>
@@ -106,7 +106,7 @@ export default function Header() {
                       {t.nav.home}
                     </a>
                   </li>
-                  <li className="p-1 ml-1 hover:cursor-pointer">
+                  {/* <li className="p-1 ml-1 hover:cursor-pointer">
                     <a
                       href="#about"
                       className="flex flex-row items-center gap-2 hover:font-bold"
@@ -114,7 +114,7 @@ export default function Header() {
                       <User className="inline-block" />
                       {t.nav.about}
                     </a>
-                  </li>
+                  </li> */}
                   <li className="p-1 ml-1 hover:cursor-pointer">
                     <a
                       href="#movies"

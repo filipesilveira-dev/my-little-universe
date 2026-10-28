@@ -91,10 +91,10 @@ export const translations = {
       },
 
       music: {
-        title: "Música",
+        title: "Playlist do Caos",
         paragraph:
-          "Sons, ritmos e melodias que fazem parte da minha vida e expressam diferentes momentos.",
-        link: "Explorar música",
+          "Costumo dizer que a música é a trilha sonora que você escolhe para a vida. Experimente vivenciar algum momento específico da vida com uma playlist em específico. Vai perceber que, sempre que ouvir alguma música presente nela, você se lembrará desse momento específico. A música é o farol dentro do caos das nossas vidas. Às vezes escolhemos, às vezes somos escolhidos por determinadas músicas. Montei uma seleção de artistas, álbuns e músicas com base justamente nessa amálgama de escolher e ser escolhido.",
+        link: "Conheça a trilha sonora do meu caos pessoal",
       },
     },
 
@@ -181,10 +181,10 @@ export const translations = {
       },
 
       music: {
-        title: "Music",
+        title: "Soundtrack to the Chaos",
         paragraph:
-          "Sounds, rhythms, and melodies that are part of my life and express different moments.",
-        link: "Explore music",
+          "I often say that music is the soundtrack you choose for your life. Try experiencing a specific moment with a playlist made for it. You will notice that whenever you hear one of its songs again, you will remember that moment. Music is a beacon amid the chaos of our lives. Sometimes we choose the songs; sometimes the songs choose us. I put together a selection of artists, albums, and songs inspired by this blend of choosing and being chosen.",
+        link: "Explore the soundtrack to my personal chaos",
       },
     },
 
@@ -271,10 +271,10 @@ export const translations = {
       },
 
       music: {
-        title: "Música",
+        title: "La banda sonora del caos",
         paragraph:
-          "Sonidos, ritmos y melodías que forman parte de mi vida y expresan diferentes momentos.",
-        link: "Explorar música",
+          "Suelo decir que la música es la banda sonora que eliges para tu vida. Prueba a vivir un momento concreto acompañado de una lista de reproducción pensada para él. Notarás que, cada vez que vuelvas a escuchar una de esas canciones, recordarás aquel momento. La música es un faro en medio del caos de nuestras vidas. A veces elegimos las canciones y, otras veces, ellas nos eligen. He reunido una selección de artistas, álbumes y canciones basada precisamente en esa mezcla de elegir y ser elegidos.",
+        link: "Conoce la banda sonora de mi caos personal",
       },
     },
 
@@ -361,10 +361,10 @@ export const translations = {
       },
 
       music: {
-        title: "Musique",
+        title: "La bande-son du chaos",
         paragraph:
-          "Des sons, des rythmes et des mélodies qui font partie de ma vie et expriment différents moments.",
-        link: "Explorer la musique",
+          "Je dis souvent que la musique est la bande-son que l’on choisit pour sa vie. Essayez de vivre un moment particulier avec une playlist conçue pour l’accompagner. Vous remarquerez qu’en réécoutant l’une de ses chansons, vous vous souviendrez de ce moment. La musique est un phare au milieu du chaos de nos vies. Parfois, nous choisissons les chansons ; parfois, ce sont elles qui nous choisissent. J’ai composé une sélection d’artistes, d’albums et de chansons autour de ce mélange entre choisir et être choisi.",
+        link: "Découvrez la bande-son de mon chaos personnel",
       },
     },
 
