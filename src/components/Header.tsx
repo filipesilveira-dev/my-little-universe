@@ -2,16 +2,12 @@ import { useState } from "react";
 import { useTheme } from "../hooks/useTheme";
 import { MenuIcon, MoonIcon, SunIcon } from "./Icons";
 import { AnimatePresence, motion } from "motion/react";
-import {
-  Clapperboard,
-  Headphones,
-  Home,
-  MonitorPlay,
-} from "lucide-react";
+import { Clapperboard, Headphones, Home, MonitorPlay } from "lucide-react";
 // Importação dos arquivos para internacionalização
 import { useLanguage } from "../hooks/useLanguage";
 import { languages } from "../i18n/translations";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default function Header() {
   // Utiliza o custom hook para estabelecer o valor de theme
@@ -23,31 +19,17 @@ export default function Header() {
   return (
     // Prega o Header no topo da tela durante rolagem
     <section className="top-0 sticky bg-(--bg)">
-
       <div className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3 h-15">
-
         {/* logo do site */}
-        <Link  to="/"><div className="font-bold hover:cursor-pointer">my little universe.</div></Link>
-        
+        <Link to="/">
+          <div className="font-bold hover:cursor-pointer">
+            my little universe.
+          </div>
+        </Link>
 
-        {/* lista não ordenada com as âncoras */}
-        <ul className="hidden sm:flex flex-row justify-between w-100">
-          <li>
-            <a className="hover:font-bold" href="#home">{t.nav.home}</a>
-          </li>
-          {/* <li>
-            <a className="hover:font-bold" href="#about">{t.nav.about}</a>
-          </li> */}
-          <li>
-            <a className="hover:font-bold" href="#movies">{t.nav.movies}</a>
-          </li>
-          <li>
-            <a className="hover:font-bold" href="#series">{t.nav.series}</a>
-          </li>
-          <li>
-            <a className="hover:font-bold" href="#music">{t.nav.music}</a>
-          </li>
-        </ul>
+        {/* Componente reutilizável que controla as âncoras do Header */}
+        <Navbar />
+
         {/* Botões interativos */}
         <div className="flex flex-row justify-between items-center gap-3">
           {/* Container do "bandeira + select" */}
@@ -58,7 +40,7 @@ export default function Header() {
               className="size-6 rounded-full object-cover"
             />
             <select
-            className="hover:cursor-pointer"
+              className="hover:cursor-pointer"
               id="language-select"
               value={language}
               onChange={(event) =>
@@ -148,7 +130,6 @@ export default function Header() {
           )}
         </AnimatePresence>
       </div>
-
     </section>
   );
 }
