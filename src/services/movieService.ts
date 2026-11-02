@@ -1,4 +1,5 @@
-// Dados retornados diretamente pela OMDb
+
+// Tipagem dos dados retornados diretamente pela OMDb
 type MovieResponse = {
   Title: string;
   Year: string;
@@ -14,7 +15,7 @@ type MovieResponse = {
   Response: "True" | "False";
 };
 
-// Dados utilizados pela aplicação
+// Tipagem dos dados utilizados pela aplicação
 export type Movie = {
   title: string;
   year: string;
@@ -29,15 +30,21 @@ export type Movie = {
   released: string | null;
 };
 
+// Função que trata campos que podem retornar "N/A"
 function normalizeValue(value: string): string | null {
   return value === "N/A" ? null : value;
 }
 
-export async function getMovieById(id: string): Promise<Movie | null> {
+// Recebe o título e o ano do filme e faz a requisição das informações do mesmo
+export async function getMovieByTitle(
+  title: string,
+  year: string
+): Promise<Movie | null> {
   const baseUrl = import.meta.env.VITE_OMDB_BASE_URL;
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
 
-  const url = `${baseUrl}/?i=${id}&plot=full&apikey=${apiKey}`;
+  const url = `${baseUrl}/?t=${encodeURIComponent(title)}&y=${year}&plot=full&apikey=${apiKey}`;
+
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -46,9 +53,8 @@ export async function getMovieById(id: string): Promise<Movie | null> {
 
   const data: MovieResponse = await response.json();
 
-  if (data.Response === "False") {
-    return null;
-  }
+  if (data.Response === "False") return null;
+
   return {
     title: data.Title,
     year: data.Year,
