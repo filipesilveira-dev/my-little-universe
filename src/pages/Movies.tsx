@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getMovieByTitle } from "../services/movieService";
 import type { Movie } from "../services/movieService";
 import MovieCarousel from "../components/MovieCarousel";
+import bg_movie from "../assets/img/movie_img.jpg";
 
 export default function Movies() {
   const { t } = useLanguage();
@@ -34,12 +35,17 @@ export default function Movies() {
   }, []);
   return (
     <section>
-      <Link to="/">
-        <ArrowLeft />
-        <span>Voltar</span>
-      </Link>
-      <h1>{t.movies.title}</h1>
-      <p>{t.movies.paragraph}</p>
+      <div
+        style={{ backgroundImage: `url(${bg_movie})` }}
+        className="flex items-center w-full h-50 bg-cover bg-center bg-no-repeat"
+      >
+        <Link to="/">
+          <ArrowLeft />
+          <span>Voltar</span>
+        </Link>
+        <h1>{t.movies.title}</h1>
+        <p>{t.movies.paragraph}</p>
+      </div>
       <MovieCarousel movies={movies} />
     </section>
   );
