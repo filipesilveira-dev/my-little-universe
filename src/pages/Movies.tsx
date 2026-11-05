@@ -37,14 +37,19 @@ export default function Movies() {
     <section>
       <div
         style={{ backgroundImage: `url(${bg_movie})` }}
-        className="flex items-center w-full h-50 bg-cover bg-center bg-no-repeat"
+        className="flex flex-col justify-center w-full h-100 bg-cover bg-center bg-no-repeat"
       >
-        <Link to="/">
+        {/* Seta de voltar */}
+        <Link to="/" className="flex">
           <ArrowLeft />
           <span>Voltar</span>
         </Link>
-        <h1>{t.movies.title}</h1>
-        <p>{t.movies.paragraph}</p>
+
+      {/* Texto inicial Movies */}
+        <div className="w-[60%]">
+          <h1 className="text-4xl">{t.movies.title}</h1>
+          <p className="min-[250px]:text-sm leading-normal md:font-medium">{t.movies.paragraph}</p>
+        </div>
       </div>
       <MovieCarousel movies={movies} />
     </section>

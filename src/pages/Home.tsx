@@ -55,6 +55,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center gap-2 bg(--bg)">
+      
       {/* Seção "Greetings" */}
       <section
         style={{ backgroundImage: `url(${bg_greetings_img})` }}
