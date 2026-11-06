@@ -7,10 +7,13 @@ import Movies from "./pages/Movies";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="bg-(--bg) sm:w-[60%]  mx-auto">
+      {/* Componente responsável por levar as páginas da rota para o topo quando acessadas */}
+      <ScrollToTop/>
       <Header />
 
       {/* Estabelece as rotas com base na URL: renderiza a página de acordo com a URL */}
