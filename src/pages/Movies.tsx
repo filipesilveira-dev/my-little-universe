@@ -1,15 +1,18 @@
 import { useLanguage } from "../hooks/useLanguage";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getMovieByTitle } from "../services/movieService";
 import type { Movie } from "../services/movieService";
 import MovieCarousel from "../components/MovieCarousel";
 import bg_movie from "../assets/img/movie_img.jpg";
+import MovieDetails from "../components/MovieDetails";
 
 export default function Movies() {
   const { t } = useLanguage();
   const [movies, setMovies] = useState<Movie[]>([]);
+  // Controle de expansão dos filmes
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const movieList = [
     { title: "Inception", year: "2010" },
     { title: "Fight Club", year: "1999" },
@@ -21,7 +24,10 @@ export default function Movies() {
     { title: "Forrest Gump", year: "1994" },
     { title: "The Truman Show", year: "1998" },
   ];
+  // Permitirá acessar o elemento HTML que envolve o MovieDetails
+  const detailsRef = useRef<HTMLDivElement>(null);
 
+  // Responsável pelas requisições de filmes ao servidor de API
   useEffect(() => {
     async function fetchMovies() {
       const results = await Promise.all(
@@ -33,6 +39,16 @@ export default function Movies() {
 
     fetchMovies();
   }, []);
+
+  // Responsável pela rolagem da tela ao clicar nos detalhes
+  useEffect(() => {
+    if (selectedMovie) {
+      detailsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [selectedMovie]);
   return (
     <section>
       <div
@@ -45,13 +61,20 @@ export default function Movies() {
           <span>Voltar</span>
         </Link>
 
-      {/* Texto inicial Movies */}
+        {/* Texto inicial Movies */}
         <div className="w-[60%]">
           <h1 className="text-4xl">{t.movies.title}</h1>
-          <p className="min-[250px]:text-sm leading-normal md:font-medium">{t.movies.paragraph}</p>
+          <p className="min-[250px]:text-sm leading-normal md:font-medium">
+            {t.movies.paragraph}
+          </p>
         </div>
       </div>
-      <MovieCarousel movies={movies} />
+      <MovieCarousel movies={movies} onSelectMovie={setSelectedMovie} />
+      {selectedMovie && (
+        <div ref={detailsRef} className="scroll-mt-10">
+          <MovieDetails movie={selectedMovie} />
+        </div>
+      )}
     </section>
   );
 }

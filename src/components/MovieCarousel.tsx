@@ -13,9 +13,11 @@ import logoImdb from "../assets/img/logoImdb.svg.webp"
 // Recebe um array contendo os filmes passado via props de Movies
 type MovieCarouselProps = {
   movies: Movie[];
+  onSelectMovie: (movie: Movie) => void;
 };
 
-export default function MovieCarousel({ movies }: MovieCarouselProps) {
+export default function MovieCarousel({ movies,
+  onSelectMovie, }: MovieCarouselProps) {
   // Armazena a instância do Swiper para controlar a navegação
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
@@ -68,7 +70,7 @@ export default function MovieCarousel({ movies }: MovieCarouselProps) {
         // }}
       >
         {movies.map((movie) => (
-          <SwiperSlide key={movie.imdbID} className="p-3 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105">
+          <SwiperSlide key={movie.imdbID} className="p-3 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105" onClick={() => onSelectMovie(movie)}>
             <div className="relative">
               <img
                 src={movie.poster ?? ""}
