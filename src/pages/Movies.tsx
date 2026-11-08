@@ -71,7 +71,7 @@ export default function Movies() {
       </div>
       <MovieCarousel movies={movies} onSelectMovie={setSelectedMovie} />
       {selectedMovie && (
-        <div ref={detailsRef} className="scroll-mt-10">
+        <div ref={detailsRef} className="scroll-mt-7">
           <MovieDetails movie={selectedMovie} />
         </div>
       )}

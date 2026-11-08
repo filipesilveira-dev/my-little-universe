@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     // Prega o Header no topo da tela durante rolagem
-    <section className="top-0 sticky bg-(--bg)">
+    <section className="top-0 sticky bg-(--bg) z-999">
       <div className="relative flex flex-row justify-between items-center m-1 mb-2 p-2 gap-3 h-15">
         {/* logo do site */}
         <Link to="/">

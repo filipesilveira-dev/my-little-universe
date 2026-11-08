@@ -11,7 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <div className="bg-(--bg) sm:w-[60%]  mx-auto">
+    <div className="bg-(--bg) min-[992px]:w-[60%]  mx-auto">
       {/* Componente responsável por levar as páginas da rota para o topo quando acessadas */}
       <ScrollToTop/>
       <Header />
