@@ -53,7 +53,7 @@ export default function Movies() {
     <section>
       <div
         style={{ backgroundImage: `url(${bg_movie})` }}
-        className="flex flex-col justify-center w-full h-100 bg-cover bg-center bg-no-repeat"
+        className="flex flex-col justify-start gap-[20%] w-full h-100 bg-cover p-3 bg-center bg-no-repeat"
       >
         {/* Seta de voltar */}
         <Link to="/" className="flex">

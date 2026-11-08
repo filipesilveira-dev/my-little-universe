@@ -42,7 +42,7 @@ export default function MovieCarousel({ movies,
         // Retorna ao início ou ao final quando necessário
         rewind
         // Define a quantidade de slides visíveis
-        slidesPerView={1}
+        slidesPerView="auto"
         // Define a distância entre os slides
         spaceBetween={16}
         // Configura a quantidade de slides conforme a largura da tela
@@ -70,7 +70,7 @@ export default function MovieCarousel({ movies,
         // }}
       >
         {movies.map((movie) => (
-          <SwiperSlide key={movie.imdbID} className="p-3 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105" onClick={() => onSelectMovie(movie)}>
+          <SwiperSlide key={movie.imdbID} className="p-3 max-w-[200px] mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105" onClick={() => onSelectMovie(movie)} title={movie.title}>
             <div className="relative">
               <img
                 src={movie.poster ?? ""}

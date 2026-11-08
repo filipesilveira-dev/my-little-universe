@@ -55,11 +55,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center gap-2 bg(--bg)">
-      
       {/* Seção "Greetings" */}
       <section
         style={{ backgroundImage: `url(${bg_greetings_img})` }}
-        className="flex items-center w-full h-150 bg-cover bg-center bg-no-repeat"
+        className="flex items-center w-full h-120 bg-cover bg-center bg-no-repeat"
         id="home"
       >
         <div className="flex justify-center items-center font-medium min-[250px]:w-full min-[450px]:w-1/2">
@@ -127,25 +126,36 @@ export default function Home() {
 
       {/* Seção "Music" */}
       <section className="w-full bg-(--bg-surface)" id="music">
+        {/* Container de texto e imagem */}
         <div className="flex flex-row">
+          {/* Container de texto */}
           <div className="flex flex-col justify-center items-left gap-3 p-6 w-1/2 font-medium">
+            {/* Título da seção */}
             <h1 className="text-3xl leading-none">{t.home.music.title}</h1>
-            <p className="min-[250px]:text-xs leading-normal">{t.home.music.paragraph}</p>
+            <p className="min-[250px]:text-xs leading-normal">
+              {t.home.music.paragraph}
+            </p>
+          </div>
+          
+          {/* Imagem da section music */}
+          <div
+            style={{ backgroundImage: `url(${bg_music_img})` }}
+            className="flex items-center w-1/2 h-150 bg-cover bg-center bg-no-repeat"
+          />
+          
+        </div>
+
+         {/* Link para a página de música ("botão") */}
             <Link
               to="/music"
-              className="min-[250px]:text-xs flex flex-row justify-between items-center px-5 py-2 rounded-lg bg-(--accent) text-white hover:opacity-80 transition-opacity"
+              className="min-[250px]:text-xs flex flex-row justify-between items-center w-[90%] mt-3 mx-auto px-5 py-2 rounded-lg bg-(--accent) text-white hover:opacity-80 transition-opacity"
             >
               <span>{t.home.music.link}</span>
               <span>
                 <ArrowRight />
               </span>
             </Link>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${bg_music_img})` }}
-            className="flex items-center w-1/2 h-150 bg-cover bg-center bg-no-repeat"
-          />
-        </div>
+
         <ArtistCarousel artists={artists} />
       </section>
     </div>
