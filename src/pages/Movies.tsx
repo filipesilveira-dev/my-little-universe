@@ -62,7 +62,8 @@ export default function Movies() {
         </Link>
 
         {/* Texto inicial Movies */}
-        <div className="w-[60%]">
+        
+        <div className="flex flex-col gap-3 mx-2  p-6 bg-(--bg)/80 w-[60%] rounded-xl shadow-2xl sm:ml-0">
           <h1 className="text-4xl">{t.movies.title}</h1>
           <p className="min-[250px]:text-sm leading-normal md:font-medium">
             {t.movies.paragraph}
