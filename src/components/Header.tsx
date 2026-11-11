@@ -32,6 +32,7 @@ export default function Header() {
 
         {/* Botões interativos */}
         <div className="flex flex-row justify-between items-center gap-3">
+
           {/* Container do "bandeira + select" */}
           <div className="flex flex-row items-center gap-1">
             <img
@@ -54,10 +55,13 @@ export default function Header() {
               ))}
             </select>
           </div>
+
           {/* Botão do menu hambúrguer */}
           <button onClick={() => setIsOpen(!isOpen)}>
             <MenuIcon className="sm:hidden hover:cursor-pointer" />
           </button>
+
+          {/* Botão alternar tema */}
           <button onClick={toggleTheme} aria-label="Alternar tema">
             {theme === "light" ? (
               <MoonIcon className="hover:cursor-pointer" />
@@ -66,6 +70,7 @@ export default function Header() {
             )}
           </button>
         </div>
+
         {/* Menu Dropdown */}
         <AnimatePresence>
           {isOpen && (

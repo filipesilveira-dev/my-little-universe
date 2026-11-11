@@ -27,6 +27,10 @@ export default function Movies() {
   // Permitirá acessar o elemento HTML que envolve o MovieDetails
   const detailsRef = useRef<HTMLDivElement>(null);
 
+  function handleSelectMovie(movie: Movie){
+    setSelectedMovie((currentMovie) => currentMovie?.imdbID===movie.imdbID? null:movie)
+  }
+
   // Responsável pelas requisições de filmes ao servidor de API
   useEffect(() => {
     async function fetchMovies() {
@@ -49,11 +53,12 @@ export default function Movies() {
       });
     }
   }, [selectedMovie]);
+
   return (
     <section>
       <div
         style={{ backgroundImage: `url(${bg_movie})` }}
-        className="flex flex-col justify-start gap-[20%] w-full h-100 bg-cover p-3 bg-center bg-no-repeat"
+        className="flex flex-col justify-start gap-[10%] w-full h-100 bg-cover p-3 bg-center bg-no-repeat min-[640px]:gap-[20%]"
       >
         {/* Seta de voltar */}
         <Link to="/" className="flex">
@@ -62,18 +67,21 @@ export default function Movies() {
         </Link>
 
         {/* Texto inicial Movies */}
-        
-        <div className="flex flex-col gap-3 mx-2  p-6 bg-(--bg)/80 w-[60%] rounded-xl shadow-2xl sm:ml-0">
+        <div className="flex flex-col gap-3 mx-2  p-6 bg-(--bg)/80 w-[80%] rounded-xl shadow-2xl sm:ml-0 min-[640px]:w-[60%]">
           <h1 className="text-4xl">{t.movies.title}</h1>
           <p className="min-[250px]:text-sm leading-normal md:font-medium">
             {t.movies.paragraph}
           </p>
         </div>
       </div>
-      <MovieCarousel movies={movies} onSelectMovie={setSelectedMovie} />
+
+      {/* Carrossel com filmes */}
+      <MovieCarousel movies={movies} onSelectMovie={handleSelectMovie}/>
       {selectedMovie && (
         <div ref={detailsRef} className="scroll-mt-7">
-          <MovieDetails movie={selectedMovie} />
+
+          {/* Detalhes dos filmes */}
+          <MovieDetails movie={selectedMovie}/>
         </div>
       )}
     </section>

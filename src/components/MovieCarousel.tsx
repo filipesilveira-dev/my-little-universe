@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import type { Movie } from "../services/movieService";
@@ -8,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import "swiper/css";
 
-import logoImdb from "../assets/img/logoImdb.svg.webp"
+import logoImdb from "../assets/img/logoImdb.svg.webp";
 
 // Recebe um array contendo os filmes passado via props de Movies
 type MovieCarouselProps = {
@@ -16,14 +15,16 @@ type MovieCarouselProps = {
   onSelectMovie: (movie: Movie) => void;
 };
 
-export default function MovieCarousel({ movies,
-  onSelectMovie, }: MovieCarouselProps) {
+export default function MovieCarousel({
+  movies,
+  onSelectMovie,
+}: MovieCarouselProps) {
   // Armazena a instância do Swiper para controlar a navegação
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <div className="mx-auto flex w-[95%] items-center gap-3">
-
       {/* Botão para retornar ao slide anterior */}
       <button
         type="button"
@@ -70,7 +71,15 @@ export default function MovieCarousel({ movies,
         // }}
       >
         {movies.map((movie) => (
-          <SwiperSlide key={movie.imdbID} className="p-3 max-w-[200px] mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105" onClick={() => onSelectMovie(movie)} title={movie.title}>
+          <SwiperSlide
+            key={movie.imdbID}
+            className="p-3 max-w-[200px] mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            onClick={() => {
+              onSelectMovie(movie);
+              setIsOpen(!isOpen);
+            }}
+            title={movie.title}
+          >
             <div className="relative">
               <img
                 src={movie.poster ?? ""}
@@ -82,9 +91,8 @@ export default function MovieCarousel({ movies,
               <p>{movie.year}</p>
               <div className="flex flex-row items-center gap-3">
                 <p>IMDb: {movie.imdbRating ?? "N/A"}</p>
-                <img src={logoImdb} alt="logo IMDB" className="h-4 w-8"/>
+                <img src={logoImdb} alt="logo IMDB" className="h-4 w-8" />
               </div>
-              
             </div>
           </SwiperSlide>
         ))}
@@ -99,7 +107,6 @@ export default function MovieCarousel({ movies,
       >
         <ChevronRight size={32} />
       </button>
-
     </div>
   );
 }

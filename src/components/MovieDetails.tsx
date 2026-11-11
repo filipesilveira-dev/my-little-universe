@@ -9,6 +9,8 @@ export default function MovieDetails({
   movie,
   experience,
 }: MovieDetailsProps) {
+  
+
   return (
     <section className="mx-auto grid w-[90%] grid-cols-1 gap-6 py-10 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_1.8fr_1fr]">
 
