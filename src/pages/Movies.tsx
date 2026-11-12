@@ -27,8 +27,9 @@ export default function Movies() {
   // Permitirá acessar o elemento HTML que envolve o MovieDetails
   const detailsRef = useRef<HTMLDivElement>(null);
 
+  // Função que atribui valor ao selectedMovie (estado que controla o aparecimento dos detalhes do filme) o valor "null" novamente ao clicar novamente no Slide do mesmo filme com os detalhes aberto filme. Caso outro filme seja clicado, o imdbID será diferente e logo abrirá os detalhes dele
   function handleSelectMovie(movie: Movie){
-    setSelectedMovie((currentMovie) => currentMovie?.imdbID===movie.imdbID? null:movie)
+    setSelectedMovie((currentMovie) => currentMovie?.imdbID===movie.imdbID? null : movie)
   }
 
   // Responsável pelas requisições de filmes ao servidor de API
