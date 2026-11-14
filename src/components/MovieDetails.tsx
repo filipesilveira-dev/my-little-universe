@@ -73,7 +73,7 @@ export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
       )}
       <div className="flex flex-col gap-3 rounded-lg bg-[#40151f] text-[#e8eaf2] p-5">
         <h3 className="text-lg font-bold text-center">Minha experiência com o filme</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, doloribus, vel consequatur est, voluptate laborum modi atque nihil corporis possimus tenetur quidem quis distinctio eos earum officiis beatae veniam eveniet.</p>
+        <p className="text-left text-[12px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, doloribus, vel consequatur est, voluptate laborum modi atque nihil corporis possimus tenetur quidem quis distinctio eos earum officiis beatae veniam eveniet.</p>
       </div>
     </section>
   );

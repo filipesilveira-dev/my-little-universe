@@ -37,7 +37,6 @@ export default function MovieCarousel({
 
       <Swiper
         className="my-3 min-w-0 flex-1"
-        centeredSlides
         // Armazena a instância do carrossel
         onSwiper={setSwiper}
         // Retorna ao início ou ao final quando necessário
@@ -47,33 +46,41 @@ export default function MovieCarousel({
         // Define a distância entre os slides
         spaceBetween={16}
         // Configura a quantidade de slides conforme a largura da tela
-        // breakpoints={{
-        //   640: {
-        //     slidesPerView: 2.5,
-        //     spaceBetween: 20,
-        //   },
-        //   768: {
-        //     slidesPerView: 3.5,
-        //     spaceBetween: 20,
-        //   },
-        //   1024: {
-        //     slidesPerView: 4.5,
-        //     spaceBetween: 24,
-        //   },
-        //   1280: {
-        //     slidesPerView: 6,
-        //     spaceBetween: 24,
-        //   },
-        //   1600: {
-        //     slidesPerView: 7,
-        //     spaceBetween: 24,
-        //   },
-        // }}
+        breakpoints={{
+          380: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          576: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          992: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          //   1024: {
+          //     slidesPerView: 4.5,
+          //     spaceBetween: 24,
+          //   },
+          //   1280: {
+          //     slidesPerView: 6,
+          //     spaceBetween: 24,
+          //   },
+          //   1600: {
+          //     slidesPerView: 7,
+          //     spaceBetween: 24,
+          //   },
+        }}
       >
         {movies.map((movie) => (
           <SwiperSlide
             key={movie.imdbID}
-            className="p-3 max-w-[200px] mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            className="p-3 mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
             onClick={() => {
               onSelectMovie(movie);
               setIsOpen(!isOpen);
