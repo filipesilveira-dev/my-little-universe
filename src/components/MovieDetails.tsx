@@ -1,4 +1,5 @@
 import type { Movie } from "../services/movieService";
+import logoImdb from "../assets/img/logoImdb.svg.webp";
 
 type MovieDetailsProps = {
   movie: Movie;
@@ -7,8 +8,8 @@ type MovieDetailsProps = {
 
 export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
   return (
-    <section className="mx-auto grid w-[90%] grid-cols-1 gap-6 py-10 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_1.8fr_1fr]">
-      <div className="flex flex-row">
+    <section className="mx-auto grid w-full grid-cols-1 gap-6 py-10 px-2 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_1.8fr_1fr] bg-black">
+      <div className="flex flex-row items-center">
         {/* Pôster do filme */}
         <div>
           {movie.poster && (
@@ -20,26 +21,39 @@ export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
           )}
         </div>
         {/* Informações principais do filme*/}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3 pl-2">
           {/* Título, ano e gênero do filme */}
-          <div>
-            <h2 className="text-3xl font-bold">{movie.title}</h2>
-            <p>
+          <div className="text-[#e8eaf2]">
+            <h2 className="text-lg font-bold">{movie.title}</h2>
+            <p className="text-xs">
               {movie.year} · {movie.genre ?? "Gênero não informado"}
             </p>
+            <span className="flex flex-row items-center gap-2 text-xs">
+              <p>IMDb: {movie.imdbRating ?? "N/A"}</p>
+              <img src={logoImdb} alt="logo IMDB" className="h-2 w-4" />
+            </span>
           </div>
           {/* Nota no IMDb */}
-          <div>
-            <p>IMDb: {movie.imdbRating ?? "N/A"}</p>
-          </div>
+          {/* <div className="flex flex-row items-center gap-2">
+            <p className="text-sm">IMDb: {movie.imdbRating ?? "N/A"}</p>
+            <img src={logoImdb} alt="logo IMDB" className="h-4 w-8" />
+          </div> */}
           {/* Ficha técnica */}
-          <div className="flex flex-col gap-1 border-l border-white/20 pl-5">
-            <h3>Ficha técnica</h3>
+          <div className="flex flex-col gap-1 border-l border-white/20 text-[#e8eaf2] pl-2 text-xs">
+            <h3 className="text-sm font-bold">Ficha técnica</h3>
 
-            <p>Direção: {movie.director ?? "Não informado"}</p>
-            <p>Elenco: {movie.actors ?? "Não informado"}</p>
-            <p>Duração: {movie.runtime ?? "Não informado"}</p>
-            <p>Lançamento: {movie.released ?? "Não informado"}</p>
+            <p>
+              <strong>Direção:</strong> {movie.director ?? "Não informado"}
+            </p>
+            <p>
+              <strong>Elenco:</strong> {movie.actors ?? "Não informado"}
+            </p>
+            <p>
+              <strong>Duração:</strong> {movie.runtime ?? "Não informado"}
+            </p>
+            <p>
+              <strong>Lançamento:</strong> {movie.released ?? "Não informado"}
+            </p>
           </div>
 
           {/* Sinopse do filme */}
@@ -52,11 +66,15 @@ export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
 
       {/* Quando tiver experiência para adicionar. Componente aparecerá abaixo do pôster e de informações técnicas*/}
       {experience && (
-        <div className="rounded-lg bg-[#40151f] p-5">
+        <div className="text-[#e8eaf2] rounded-lg bg-[#40151f] p-5">
           <h3>Minha experiência com o filme</h3>
           <p>{experience}</p>
         </div>
       )}
+      <div className="flex flex-col gap-3 rounded-lg bg-[#40151f] text-[#e8eaf2] p-5">
+        <h3 className="text-lg font-bold text-center">Minha experiência com o filme</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, doloribus, vel consequatur est, voluptate laborum modi atque nihil corporis possimus tenetur quidem quis distinctio eos earum officiis beatae veniam eveniet.</p>
+      </div>
     </section>
   );
 }
