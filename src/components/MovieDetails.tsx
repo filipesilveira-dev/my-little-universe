@@ -8,8 +8,10 @@ type MovieDetailsProps = {
 
 export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
   return (
-    <section className="mx-auto grid w-full grid-cols-1 gap-6 py-10 px-2 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_1.8fr_1fr] bg-black">
-      <div className="flex flex-row items-center">
+    <section className="flex flex-col mx-auto w-full gap-6 py-10 px-5 rounded-[10px] min-[576px]:flex-row bg-black">
+
+      {/* Container do pôster e suas informações */}
+      <div className="flex flex-row items-center min-[576px]:w-full">    
         {/* Pôster do filme */}
         <div>
           {movie.poster && (
@@ -20,6 +22,7 @@ export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
             />
           )}
         </div>
+        
         {/* Informações principais do filme*/}
         <div className="flex flex-col gap-3 pl-2">
           {/* Título, ano e gênero do filme */}
@@ -66,15 +69,16 @@ export default function MovieDetails({ movie, experience }: MovieDetailsProps) {
 
       {/* Quando tiver experiência para adicionar. Componente aparecerá abaixo do pôster e de informações técnicas*/}
       {experience && (
-        <div className="text-[#e8eaf2] rounded-lg bg-[#40151f] p-5">
+        <div className="flex flex-col gap-3 rounded-lg bg-[#40151f] text-[#e8eaf2] p-5 min-[576px]:w-[90%]">
           <h3>Minha experiência com o filme</h3>
           <p>{experience}</p>
         </div>
       )}
-      <div className="flex flex-col gap-3 rounded-lg bg-[#40151f] text-[#e8eaf2] p-5">
+      <div className="flex flex-col gap-3 rounded-lg bg-[#40151f] text-[#e8eaf2] p-5 min-[576px]:w-[90%]">
         <h3 className="text-lg font-bold text-center">Minha experiência com o filme</h3>
         <p className="text-left text-[12px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, doloribus, vel consequatur est, voluptate laborum modi atque nihil corporis possimus tenetur quidem quis distinctio eos earum officiis beatae veniam eveniet.</p>
       </div>
+
     </section>
   );
 }

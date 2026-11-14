@@ -48,6 +48,7 @@ export default function Movies() {
   // Responsável pela rolagem da tela ao clicar nos detalhes
   useEffect(() => {
     if (selectedMovie) {
+      // "scrollIntoView" é um método de um elemento DOM, no caso aquele com o useRef (detailsRef). O useRef especifica o elemento até o qual "scrollIntoView" rolaria a tela
       detailsRef.current?.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -62,7 +63,7 @@ export default function Movies() {
         className="flex flex-col justify-start gap-[10%] w-full h-100 bg-cover p-3 bg-center bg-no-repeat min-[640px]:gap-[20%]"
       >
         {/* Seta de voltar */}
-        <Link to="/" className="flex">
+        <Link to="/" className="flex text-[#e8eaf2]">
           <ArrowLeft />
           <span>Voltar</span>
         </Link>
@@ -78,7 +79,9 @@ export default function Movies() {
 
       {/* Carrossel com filmes */}
       <MovieCarousel movies={movies} onSelectMovie={handleSelectMovie}/>
+      {/* Renderização condicional dos detalhes do filme selecionado quando o usuário clicar no slide do filme  */}
       {selectedMovie && (
+        // O useRef ajuda ao "scrollIntoView" a achar o componente
         <div ref={detailsRef} className="scroll-mt-7">
 
           {/* Detalhes dos filmes */}

@@ -148,7 +148,7 @@ export default function Home() {
          {/* Link para a página de música ("botão") */}
             <Link
               to="/music"
-              className="min-[250px]:text-xs flex flex-row justify-between items-center w-[90%] mt-3 mx-auto px-5 py-2 rounded-lg bg-(--accent) text-white hover:opacity-80 transition-opacity"
+              className="min-[250px]:text-xs flex flex-row justify-between items-center w-[90%] max-w-100 mt-3 mx-auto px-5 py-2 rounded-lg bg-(--accent) text-white hover:opacity-80 transition-opacity min-[992px]:w-[40%] min-[460px]:mx-0 min-[460px]:ml-5 min-[992px]:ml-10"
             >
               <span>{t.home.music.link}</span>
               <span>

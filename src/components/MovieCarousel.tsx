@@ -91,7 +91,7 @@ export default function MovieCarousel({
               <img
                 src={movie.poster ?? ""}
                 alt={`Pôster de ${movie.title}`}
-                className="w-full"
+                className="w-full rounded-[10px]"
               />
 
               <h2>{movie.title}</h2>

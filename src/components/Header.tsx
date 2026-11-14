@@ -62,7 +62,7 @@ export default function Header() {
           </button>
 
           {/* Botão alternar tema */}
-          <button onClick={toggleTheme} aria-label="Alternar tema">
+          <button onClick={toggleTheme} aria-label="Alternar tema" className="transition-transform duration-300 ease-in-out hover:rotate-15">
             {theme === "light" ? (
               <MoonIcon className="hover:cursor-pointer" />
             ) : (
@@ -75,7 +75,7 @@ export default function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="absolute top-full left-0 w-full overflow-hidden bg-(--bg-surface) shadow-0_4px_2px_-2px_rgba(0,0,0,0.2) z-999 rounded-b-xl sm:hidden"
+              className="absolute top-full left-0 w-full overflow-hidden bg-(--bg) shadow-0_4px_2px_-2px_rgba(0,0,0,0.2) z-999 rounded-b-xl sm:hidden"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
