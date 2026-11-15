@@ -63,18 +63,6 @@ export default function MovieCarousel({
             slidesPerView: 5,
             spaceBetween: 20,
           },
-          //   1024: {
-          //     slidesPerView: 4.5,
-          //     spaceBetween: 24,
-          //   },
-          //   1280: {
-          //     slidesPerView: 6,
-          //     spaceBetween: 24,
-          //   },
-          //   1600: {
-          //     slidesPerView: 7,
-          //     spaceBetween: 24,
-          //   },
         }}
       >
         {movies.map((movie) => (
