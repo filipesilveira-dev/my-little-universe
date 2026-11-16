@@ -10,7 +10,7 @@ import type { Series } from "../services/seriesService";
 import SeriesCarousel from "../components/SerieCarousel";
 import SeriesDetails from "../components/SerieDetails";
 
-import bg_series from "../assets/img/winterfell.jpg";
+import bg_series from "../assets/img/serie_img.jpg";
 
 export default function Series() {
   const { t } = useLanguage();
@@ -77,9 +77,9 @@ export default function Series() {
         className="flex flex-col justify-start gap-[10%] w-full h-100 bg-cover p-3 bg-center bg-no-repeat min-[640px]:gap-[20%]"
       >
         {/* Seta de voltar */}
-        <Link to="/" className="flex text-[#e8eaf2]">
+        <Link to="/" className="flex text-[#e8eaf2] ">
           <ArrowLeft />
-          <span>Voltar</span>
+          <span className="hover:scale-105 hover:cursor-pointer hover:font-bold">Voltar</span>
         </Link>
 
         {/* Texto inicial Series */}
@@ -101,7 +101,7 @@ export default function Series() {
       {/* Renderização condicional dos detalhes */}
       {selectedSeries && (
         <div ref={detailsRef} className="scroll-mt-7">
-          <SeriesDetails serie={selectedSeries} />
+          <SeriesDetails serie={selectedSeries} onSelectSeries={handleSelectSeries}/>
         </div>
       )}
     </section>

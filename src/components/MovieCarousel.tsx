@@ -21,7 +21,7 @@ export default function MovieCarousel({
 }: MovieCarouselProps) {
   // Armazena a instância do Swiper para controlar a navegação
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  
 
   return (
     <div className="mx-auto flex w-[95%] items-center gap-3">
@@ -70,8 +70,7 @@ export default function MovieCarousel({
             key={movie.imdbID}
             className="p-3 mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
             onClick={() => {
-              onSelectMovie(movie);
-              setIsOpen(!isOpen);
+              onSelectMovie(movie);   
             }}
             title={movie.title}
           >

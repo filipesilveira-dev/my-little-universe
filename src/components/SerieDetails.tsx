@@ -6,13 +6,24 @@ import logoImdb from "../assets/img/logoImdb.svg.webp";
 type SerieDetailsProps = {
   serie: Series;
   experience?: string;
+  onSelectSeries: (serie: Series)=>void
 };
 
 export default function SerieDetails({
   serie,
-  experience,
+  experience, onSelectSeries,
 }: SerieDetailsProps) {
   return (
+    <>
+    <div
+        className="text-right w-[-1] hover:cursor-pointer hover:font-bold"
+        onClick={() => {
+          onSelectSeries(serie);
+        }}
+        title="Fechar"
+      >
+        X
+      </div>
     <section className="flex flex-col mx-auto w-full gap-6 py-10 px-5 rounded-[10px] min-[576px]:flex-row bg-black">
 
       {/* Container do pôster e suas informações */}
@@ -99,5 +110,7 @@ export default function SerieDetails({
       </div>
 
     </section>
+    </>
+    
   );
 }

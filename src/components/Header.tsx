@@ -62,7 +62,7 @@ export default function Header() {
           </button>
 
           {/* Botão alternar tema */}
-          <button onClick={toggleTheme} aria-label="Alternar tema" className="transition-transform duration-300 ease-in-out hover:rotate-15">
+          <button onClick={toggleTheme} aria-label="Alternar tema" className="transition-transform duration-300 ease-in-out hover:rotate-15 hover:scale-110">
             {theme === "light" ? (
               <MoonIcon className="hover:cursor-pointer" />
             ) : (

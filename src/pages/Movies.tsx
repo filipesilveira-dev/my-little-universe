@@ -64,8 +64,8 @@ export default function Movies() {
       >
         {/* Seta de voltar */}
         <Link to="/" className="flex text-[#e8eaf2]">
-          <ArrowLeft />
-          <span>Voltar</span>
+          <ArrowLeft/>
+          <span className="hover:scale-105 hover:cursor-pointer hover:font-bold">Voltar</span>
         </Link>
 
         {/* Texto inicial Movies */}
@@ -85,7 +85,7 @@ export default function Movies() {
         <div ref={detailsRef} className="scroll-mt-7">
 
           {/* Detalhes dos filmes */}
-          <MovieDetails movie={selectedMovie}/>
+          <MovieDetails movie={selectedMovie} onSelectMovie={handleSelectMovie}/>
         </div>
       )}
     </section>
